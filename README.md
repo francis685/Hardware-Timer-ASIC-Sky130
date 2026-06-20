@@ -22,12 +22,14 @@ Both phases were synthesized, placed, and routed using the open-source **OpenLan
 * **Verification:** Behavioral simulation via Xilinx Vivado.
 
 ### Phase 1 RTL Verification
-*(DRAG_BASIC_WAVEFORM_HERE)*
+<img width="1906" height="1053" alt="Screenshot 2026-06-20 073347" src="https://github.com/user-attachments/assets/92c12718-c10e-4132-9ce0-3b03e101bb68" />
+
 
 > **Analysis:** Vivado simulation confirming structural logic integrity. The 4-bit count accurately increments on the positive edge of the clock.
 
 ### Phase 1 Physical Layout
-*(DRAG_50x50_KLAYOUT_HERE)*
+<img width="1918" height="1078" alt="Screenshot 2026-06-20 082900" src="https://github.com/user-attachments/assets/4fdff34a-1ea3-4b79-b5fa-360ff900783d" />
+
 
 > **Analysis:** The physical macro layout utilizing the $50 \times 50\ \mu\text{m}$ die area constraint. Features horizontal standard cell rows and local interconnect routing for the core flip-flop logic.
 
@@ -41,12 +43,15 @@ To standardize the IP for SoC architectures, an APB wrapper was developed to tra
 * **Sign-off:** 0 DRC Violations, 0 LVS Errors.
 
 ### Phase 2 APB Read Transaction (Simulation)
-*(DRAG_APB_WAVEFORM_HERE)*
+<img width="1901" height="1015" alt="Screenshot 2026-06-20 141123" src="https://github.com/user-attachments/assets/9437222c-baff-4618-b1f6-eee309fa3ce6" />
+
+
 
 > **Analysis:** A successful APB read transaction. When `PSEL` and `PENABLE` assert, the wrapper securely captures the underlying 4-bit counter value, zero-extends it to 32 bits, and outputs it onto the `PRDATA` bus with zero latency.
 
 ### Phase 2 Final GDSII Silicon Blueprint
-*(DRAG_100x100_KLAYOUT_HERE)*
+  <img width="1902" height="1062" alt="Screenshot 2026-06-20 141148" src="https://github.com/user-attachments/assets/34e26140-c433-4b4a-b79b-001f4d36ad69" />
+
 
 > **Analysis:** The final macroscopic routing view. The design clearly illustrates the dense routing network required to fan out the 32-bit AMBA data bus to the $100\ \mu\text{m}$ boundary.
 
